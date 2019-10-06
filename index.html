@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ANIKET'S PORTFOLIO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="home.css">
+    </head>
+    <body onload="myFunction()";>
+        <div id="loader">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+        </div>
+        <div id="page" style="display: none";>
+        <div id="sidebar" class="navbar">
+            <a class="close" style="padding: 0px 9px;"  onclick="closenav()">&times;</a>
+            <a href="#">HOME</a>
+            <a href="#">ABOUT</a>
+            <a href="#">SKILLS</a>
+            <a href="#">CONTACT</a>
+        </div>
+        <div id="menu" class="mobhead">
+        <a class="openbtn" onclick="opennav()">☰ </a>
+            <a class="icon" href="https://www.facebook.com/aniket.agrawal.562114"><img src="facebook.png"></a>
+             <a class="icon" href="https://www.linkedin.com/in/aniket-agrawal-2b8a3716b/" ><img src="linkedin.png"></a>
+        </div>
+        <div class="lapmenu" id="lptmenu">
+            <header>
+            <a href="#">HOME</a>
+            <a href="#">ABOUT</a>
+            <a href="#">SKILLS</a>
+            <a href="#">CONTACT</a></header>
+            <ul class="pscroll">
+                <li class="scroll" id="idscroll1" style="width: 30px;"><a href="#section1">  </a></li>
+                <li class="scroll" id="idscroll2"><a href="#section2"></a></li>
+                <li  class="scroll" id="idscroll3"><a href="#section3"></a></li>
+            </ul>
+            <div class="container">
+                  <div class="child" id="section1">
+                      <h1 class="name">I'm <br>  ANIKET<br> AGRAWAL</h1>
+                      
+                </div>
+                  <div class="child" id="section2">2</div>
+                  <div class="child" id="section3">3</div>
+            </div>
+            <footer>
+                <a class="icon" href="https://www.facebook.com/aniket.agrawal.562114"><img src="facebook.png"></a>
+                <a class="icon" href="https://www.linkedin.com/in/aniket-agrawal-2b8a3716b/" ><img src="linkedin.png"></a>
+            </footer>
+        </div>
+        </div>
+    <script>
+       var gscroll
+    function opennav() {
+      document.getElementById("sidebar").style.width = "250px";
+
+    }
+
+    function closenav() {
+      document.getElementById("sidebar").style.width = "0";
+      document.getElementById("menu").style.marginLeft= "0";
+    }
+    function myFunction(){
+        setTimeout(showpage, 3000);
+        gscroll = document.body.scrollTop || document.documentElement.scrollTop;
+    }
+        function showpage(){
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("page").style.display = "block";
+        }
+        window.onscroll = function() {pop()};
+
+        function pop() {
+            var scroll = document.body.scrollTop || document.documentElement.scrollTop;
+            if (scroll > 0 && scroll < 730) {
+            document.getElementById("idscroll1").style.width = "30px";
+                document.getElementById("idscroll2").style.width = "12px";
+                document.getElementById("idscroll3").style.width = "12px";
+                if((scroll-gscroll)>40){
+                    document.body.scrollTop = 741;
+                document.documentElement.scrollTop = 741;
+                    gscroll = scroll;
+                }
+          }
+        else{if (scroll > 740 && scroll < 1470) {
+            document.getElementById("idscroll2").style.width = "30px";
+            document.getElementById("idscroll1").style.width = "12px";
+            document.getElementById("idscroll3").style.width = "12px";
+            if((scroll-gscroll)>40){
+                    document.body.scrollTop = 2180;
+                document.documentElement.scrollTop = 2180;
+                    gscroll = scroll;
+                }
+            else{
+                if((scroll-gscroll)<0){
+                    document.body.scrollTop = 1;
+                document.documentElement.scrollTop = 1;
+                    gscroll = scroll;
+                }
+                }
+          }
+            else{if (scroll > 1470 && scroll < 2190) {
+            document.getElementById("idscroll2").style.width = "12px";
+            document.getElementById("idscroll3").style.width = "30px";
+                document.getElementById("idscroll1").style.width = "12px";
+                document.body.scrollTop = 2190;
+                document.documentElement.scrollTop = 2190;
+          }
+                }
+            }
+        }
+    </script>
+    </body>
+</html>
